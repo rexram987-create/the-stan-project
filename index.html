@@ -324,7 +324,7 @@
             demographics: {
               mainNationName: 'אוזבקים',
               mainNationPercent: 'כ-84%',
-              description: 'כ-36 מיליון תושבים בסך הכל (זוהי המדינה המאוכלסת ביותר במרכז אסיה). קיים במדינה מיעוט טג\'יקי רשמי של כ-5%, אם כי חוקרים דמוגרפיים מעריכים כי המספר בפועל גבוה הרבה יותר בערים היסטוריות כמו סמרקנד ובוכרה. ישנם גם מיעוטים קטנים של קזחים ורוסים.'
+              description: 'כ-36 מיליון תושבים בסך הכל (זוהי המדינה המאוכלסת ביותר במרכז אסיה). קיים במדינה מיעוט טג\'יקי רשמי של כ-5%, אם כי חוקרים דמוגרפיים מעריכים כי המספר בפועל גבוה הרבה יותר בערים היסטוריות כמו סמרקנד ובוכרה. ישנם גם מיעוטים אוזבקים, קזחים ורוסים.'
             },
             modernHistory: 'הכריזה על עצמאותה ב-31 באוגוסט 1991. מנהיגה הראשון, אסלאם קרימוב, שלט בה ביד ברזל תוך דיכוי כל אופוזיציה דתית וחילונית כאחד עד יום מותו ב-2016. יורשו החל בתהליך איטי וזהיר של פתיחת הכלכלה ושיפור יחסי החוץ של המדינה מול העולם המערבי והשכנות.',
             foundingYears: '1991 (עצמאות מודרנית). יושבת על ערש דרך המשי.',
@@ -338,7 +338,7 @@
               name: 'אמיר טימור - טימור לנג (Amir Timur)',
               years: '1336 - 1405',
               childhood: 'נולד סמוך לשחריסאבז למשפחה משבט ברלאס הטורקו-מונגולי. פציעה קשה בנעוריו העניקה לו את הכינוי "הצולע" (לנג).',
-              ideology: 'תחייתה ושחזורה של האימפריה המונגולית של ג\'ינגיס חאן, בשילוב תרבות אסלאמית פרסית גבוהה, משמעת אכזרית, וקידום מדע ואומנויות.',
+              ideology: 'תחייה ושחזורה של האימפריה המונגולית של ג\'ינגיס חאן, בשילוב תרבות אסלאמית פרסית גבוהה, משמעת אכזרית, וקידום מדע ואומנויות.',
               achievements: 'מייסד האימפריה הטימורית. כבש שטחים מדהימים בעולם הישן. הפך את בירתו סמרקנד לפנינה אדריכלית, ונחשב לגיבור העל הלאומי של אוזבקיסטן המודרנית.'
             }
           }
@@ -357,23 +357,29 @@
           return (
             <article className="bg-slate-900 border border-slate-700/60 rounded-[2rem] shadow-2xl overflow-hidden flex flex-col h-full transform transition-all duration-300 hover:shadow-cyan-900/20">
               
+              {/* 1. זהות בסיסית: כותרת עליונה מחוזקת בעברית */}
               <div className="relative pt-10 pb-6 px-6 bg-gradient-to-b from-slate-800 to-slate-900 border-b border-slate-800 shrink-0 text-center z-10">
-                <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 drop-shadow-sm mb-2">
+                <h2 className="text-4xl md:text-5xl font-black text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)] mb-3">
                   {name}
                 </h2>
-                <span className="text-sm md:text-base font-bold text-slate-500 tracking-[0.3em] uppercase">
-                  {englishName}
-                </span>
+                <div className="flex items-center justify-center gap-3">
+                  <div className="h-[1px] w-4 md:w-8 bg-slate-700"></div>
+                  <span className="text-xs md:text-sm font-bold text-slate-500 tracking-[0.3em] uppercase">
+                    {englishName}
+                  </span>
+                  <div className="h-[1px] w-4 md:w-8 bg-slate-700"></div>
+                </div>
               </div>
 
               <div className="p-5 md:p-7 flex flex-col gap-8 grow bg-slate-900/50">
                 
+                {/* 2. רקע פיזי ואנושי */}
                 <section className="space-y-4">
                   <h3 className="text-sm font-bold text-slate-500 uppercase tracking-widest border-b border-slate-800 pb-2 mb-4 flex items-center gap-2">
                     <i className="fa-solid fa-map-location-dot"></i> רקע פיזי ואנושי
                   </h3>
                   
-                  <div className="flex items-start gap-3.5 bg-slate-800/40 p-4 rounded-2xl border border-slate-700/50 hover:bg-slate-800/60 transition-colors">
+                  <div className="flex items-start gap-3.5 bg-slate-800/40 p-4 rounded-2xl border border-slate-700/50 hover:bg-slate-800/60 transition-colors shadow-sm">
                     <i className="fa-solid fa-expand text-sky-400 shrink-0 mt-0.5 text-lg"></i>
                     <div>
                       <h4 className="text-xs font-bold text-sky-400 uppercase tracking-widest mb-1.5">שטח גיאוגרפי</h4>
@@ -381,14 +387,14 @@
                     </div>
                   </div>
                   
-                  <div className="flex items-start gap-3.5 bg-slate-800/40 p-4 rounded-2xl border border-slate-700/50 hover:bg-slate-800/60 transition-colors">
+                  <div className="flex items-start gap-3.5 bg-slate-800/40 p-4 rounded-2xl border border-slate-700/50 hover:bg-slate-800/60 transition-colors shadow-sm">
                     <i className="fa-solid fa-users-viewfinder text-pink-400 shrink-0 mt-0.5 text-lg"></i>
                     <div className="w-full">
                       <h4 className="text-xs font-bold text-pink-400 uppercase tracking-widest mb-3">דמוגרפיה ואוכלוסייה</h4>
                       
                       <div className="mb-3 flex flex-wrap items-center gap-2 bg-pink-500/10 border border-pink-500/20 px-4 py-2 rounded-xl w-full shadow-inner">
                         <i className="fa-solid fa-chart-pie text-pink-400 text-sm"></i>
-                        <span className="text-sm font-bold text-pink-300/80">העם הרשמי/העיקרי:</span>
+                        <span className="text-sm font-bold text-pink-300/80">העם הרשמי:</span>
                         <span className="text-sm md:text-base font-black text-white">{demographics.mainNationName}</span>
                         <span className="text-sm font-black bg-pink-500 text-white px-2.5 py-0.5 rounded-md mr-auto shadow-sm">
                           {demographics.mainNationPercent}
@@ -400,12 +406,13 @@
                   </div>
                 </section>
 
+                {/* 3. ציר זמן היסטורי */}
                 <section className="space-y-4">
                   <h3 className="text-sm font-bold text-slate-500 uppercase tracking-widest border-b border-slate-800 pb-2 mb-4 flex items-center gap-2">
                     <i className="fa-solid fa-hourglass-half"></i> ציר זמן היסטורי
                   </h3>
 
-                  <div className="flex items-start gap-3.5 bg-slate-800/40 p-4 rounded-2xl border border-slate-700/50 hover:bg-slate-800/60 transition-colors">
+                  <div className="flex items-start gap-3.5 bg-slate-800/40 p-4 rounded-2xl border border-slate-700/50 hover:bg-slate-800/60 transition-colors shadow-sm">
                     <i className="fa-solid fa-calendar-days text-indigo-400 shrink-0 mt-0.5 text-lg"></i>
                     <div>
                       <h4 className="text-xs font-bold text-indigo-400 uppercase tracking-widest mb-1.5">
@@ -417,7 +424,7 @@
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3.5 bg-slate-800/40 p-4 rounded-2xl border border-slate-700/50 hover:bg-slate-800/60 transition-colors">
+                  <div className="flex items-start gap-3.5 bg-slate-800/40 p-4 rounded-2xl border border-slate-700/50 hover:bg-slate-800/60 transition-colors shadow-sm">
                     <i className="fa-solid fa-landmark text-amber-500 shrink-0 mt-0.5 text-lg"></i>
                     <div>
                       <h4 className="text-xs font-bold text-amber-500 uppercase tracking-widest mb-1.5">הקמת המדינה המודרנית</h4>
@@ -426,6 +433,7 @@
                   </div>
                 </section>
 
+                {/* 4. סמלים ומשמעות */}
                 <section className="space-y-4">
                   <h3 className="text-sm font-bold text-slate-500 uppercase tracking-widest border-b border-slate-800 pb-2 mb-4 flex items-center gap-2">
                     <i className="fa-solid fa-flag"></i> סמלים ומשמעות לאומית
@@ -445,7 +453,7 @@
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3 bg-gradient-to-br from-blue-900/20 to-transparent p-4 rounded-2xl border border-blue-500/20 mb-6">
+                  <div className="flex items-start gap-3 bg-gradient-to-br from-blue-900/20 to-transparent p-4 rounded-2xl border border-blue-500/20 mb-6 shadow-sm">
                     <i className="fa-solid fa-circle-info text-blue-400 shrink-0 mt-1 text-lg"></i>
                     <div>
                       <h4 className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-1.5">
@@ -465,7 +473,7 @@
                       </h4>
                     </div>
 
-                    <div className={`p-4 rounded-2xl border ${etymology.part1.bg} ${etymology.part1.border}`}>
+                    <div className={`p-4 rounded-2xl border ${etymology.part1.bg} ${etymology.part1.border} shadow-sm`}>
                       <h5 className={`text-lg font-black ${etymology.part1.color} mb-3 flex items-center gap-2`}>
                         <span className="bg-slate-900/60 px-2 py-1 rounded text-xs tracking-widest font-bold">שורש ראשון</span>
                         {etymology.part1.text}
@@ -475,7 +483,7 @@
                       </p>
                     </div>
 
-                    <div className={`p-4 rounded-2xl border ${etymology.part2.bg} ${etymology.part2.border}`}>
+                    <div className={`p-4 rounded-2xl border ${etymology.part2.bg} ${etymology.part2.border} shadow-sm`}>
                       <h5 className={`text-lg font-black ${etymology.part2.color} mb-3 flex items-center gap-2`}>
                         <span className="bg-slate-900/60 px-2 py-1 rounded text-xs tracking-widest font-bold">הסיומת</span>
                         {etymology.part2.text}
@@ -499,6 +507,7 @@
                   </div>
                 </section>
 
+                {/* 5. הגורם האנושי */}
                 <section className="mt-auto pt-8 border-t border-slate-800">
                   <h3 className="text-sm font-bold text-slate-500 uppercase tracking-widest pb-3 flex items-center gap-2">
                     <i className="fa-solid fa-users-viewfinder text-sm"></i> הגורם האנושי
@@ -517,7 +526,7 @@
 
                     <div className="space-y-5">
                       <div className="flex gap-4">
-                        <div className="bg-slate-800 p-2 rounded-lg shrink-0 h-fit">
+                        <div className="bg-slate-800 p-2 rounded-lg shrink-0 h-fit shadow-sm">
                           <i className="fa-solid fa-graduation-cap text-slate-400"></i>
                         </div>
                         <div>
@@ -527,17 +536,17 @@
                       </div>
 
                       <div className="flex gap-4">
-                        <div className="bg-amber-900/20 p-2 rounded-lg shrink-0 h-fit">
+                        <div className="bg-amber-900/20 p-2 rounded-lg shrink-0 h-fit shadow-sm">
                           <i className="fa-solid fa-lightbulb text-amber-400"></i>
                         </div>
                         <div>
-                          <h5 className="text-sm font-bold text-amber-400 mb-1.5 uppercase tracking-wide">אידאולוגיה / תפיסת עולם</h5>
+                          <h5 className="text-sm font-bold text-amber-400 mb-1.5 uppercase tracking-wide">אידאולוגיה</h5>
                           <p className="text-slate-300 text-sm leading-relaxed">{figure.ideology}</p>
                         </div>
                       </div>
 
                       <div className="flex gap-4">
-                        <div className="bg-yellow-900/20 p-2 rounded-lg shrink-0 h-fit">
+                        <div className="bg-yellow-900/20 p-2 rounded-lg shrink-0 h-fit shadow-sm">
                           <i className="fa-solid fa-trophy text-yellow-500"></i>
                         </div>
                         <div>
@@ -620,7 +629,7 @@
                 </div>
 
                 <footer className="mt-24 text-center border-t border-slate-800/80 pt-10">
-                  <div className="inline-flex items-center justify-center gap-2 bg-slate-900/50 px-6 py-3 rounded-full border border-slate-800">
+                  <div className="inline-flex items-center justify-center gap-2 bg-slate-900/50 px-6 py-3 rounded-full border border-slate-800 shadow-md">
                     <i className="fa-solid fa-clock-rotate-left text-slate-500"></i>
                     <p className="text-slate-400 font-medium">
                       נבנה והותאם במיוחד לקריאה ב-Samsung S25 Ultra | תמיכה מלאה ב-Dark Mode
